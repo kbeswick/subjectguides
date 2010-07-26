@@ -448,13 +448,21 @@ function _ldapauth_user_lookup($name) {
       continue;
 
     $num_matches = $result['count'];
-    // Must find exactly one user for authentication to.
-    if ($num_matches != 1) {
-      watchdog('ldapauth', "Error: %num_matches users found with $%filter under %base_dn.", array('%num_matches' => $num_matches, '%filter' => $filter, '%base_dn' => $base_dn), WATCHDOG_ERROR);
-      continue;
-    }
-    $match = $result[0];
 
+    // We have users who have more than one LDAP entry. Check for the 'zenzfdversion' key in the array, to make sure the entry is not an alias.
+
+    foreach ($result as $r)
+    {
+      if (isset($r['zenzfdversion']))
+      {
+        $match = $r;
+      }
+    
+    }
+      if (!isset($match))
+        $match = $result[0];
+
+    
     // These lines serve to fix the attribute name in case a
     // naughty server (i.e.: MS Active Directory) is messing the
     // characters' case.
