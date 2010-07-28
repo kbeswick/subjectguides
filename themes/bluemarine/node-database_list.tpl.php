@@ -3,6 +3,10 @@
 	foreach ($field_databases as $dbase_node)
 	{
 		$dbase = node_load($dbase_node['nid']);
+    //if the database is expired, do not show it
+    if (isset($dbase->field_database_expiration_date[0]['value2']) && strtotime($dbase->field_database_expiration_date[0]['value2']) < strtotime(date('Y-m-d')))
+      continue;
+
 		// START Output for database
 ?>
 
