@@ -359,7 +359,6 @@ div.admin-panel h3 {
     display: none;
 }
 div.block-nice_menus h2 div {
-  float: left;
-  position: relative;
-  left: 95%;
+  float: right;
+  position: inherit;
 }
