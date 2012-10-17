@@ -7,6 +7,7 @@
 		height:150px; 
 		padding:0px 3px;
 		margin: 0px auto;
+        display: none;
 	}
 	.db_listing {
 		width: 90%;

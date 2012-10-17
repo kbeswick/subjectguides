@@ -16,8 +16,11 @@ mkdir -p $DRUPALTMP/libraries
 mkdir -p $DRUPALTMP/modules
 mkdir -p $DRUPALTMP/patches
 mkdir -p $DRUPALTMP/themes
-
+mkdir -p $DRUPALTMP/gitrepo
 cp patches/breadcrumb.patch $DRUPALTMP/patches
+
+cd $DRUPALTMP/gitrepo
+git clone https://github.com/dbs/subjectguides.git
 
 cd $DRUPALTMP
 wget http://ftp.drupal.org/files/projects/cck-6.x-2.9.tar.gz
@@ -46,24 +49,20 @@ tar xzf ../token-6.x-1.19.tar.gz
 tar xzf ../views-6.x-2.16.tar.gz
 tar xzf ../wysiwyg-6.x-2.4.tar.gz
 
-cd $DRUPALTMP/themes
-wget https://raw.github.com/kbeswick/subjectguides/master/themes/bluemarine/node.tpl.php
-wget https://raw.github.com/kbeswick/subjectguides/master/themes/bluemarine/page.tpl.php
-
 cd $DRUPALTMP/libraries
 wget http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip
 
 # copy stuff 
 sudo mv $DRUPALOLD $DRUPALBAK
-sudo mkdir $DRUPALINST
+sudo mkdir -p $DRUPALINST/sites/all/themes
 # XXX - TEST
-sudo cp -r /var/backups/biblio/var/www/research/* $DRUPALINST/.
+sudo cp -ar /var/backups/biblio/var/www/research/* $DRUPALINST/.
 # XXX - PRODUCTION
-sudo cp -r $DRUPALBAK/* $DRUPALINST/.
-sudo cp -r $DRUPALTMP/drupal-6.26/* $DRUPALINST/.
+sudo cp -ar $DRUPALBAK/* $DRUPALINST/.
+sudo cp -ar $DRUPALTMP/drupal-6.26/* $DRUPALINST/.
 sudo rm -fr $DRUPALINST/modules/date
 sudo cp -r $DRUPALTMP/modules/date $DRUPALINST/modules/.
-sudo cp -b $DRUPALTMP/themes/* $DRUPALINST/themes/bluemarine/.
+sudo cp -ar $DRUPALTMP/gitrepo/subjectguides/themes/* $DRUPALINST/sites/all/themes/.
 sudo chown -R www-data:www-data $DRUPALINST
 
 echo Now run Drupal upgrade

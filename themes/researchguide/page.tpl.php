@@ -10,7 +10,7 @@
   <?php print $scripts ?>
   <?php 
     drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-1.4.2.min.js');
-    php drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-ui-1.8.1.custom.min.js');
+    drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-ui-1.8.1.custom.min.js');
     drupal_add_css(drupal_get_path('theme', 'researchguide') . 'css/redmond/jquery-ui-1.8.1.custom.css');
   ?>
   <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyle Content in IE */ ?> </script>
@@ -26,8 +26,6 @@
       <?php if ($site_slogan) { ?><div class='site-slogan'><?php print $site_slogan ?></div><?php } ?>
     </td>
     <td id="menu">
-      <?php if (isset($secondary_links)) { ?><?php print theme('links', $secondary_links, array('class' => 'links', 'id' => 'subnavlist')) ?><?php } ?>
-      <!--<?php if (isset($primary_links)) { ?><?php print theme('links', $primary_links, array('class' => 'links', 'id' => 'navlist')) ?><?php } ?>-->
       <?php print $search_box ?>
     </td>
   </tr>
