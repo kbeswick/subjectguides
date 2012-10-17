@@ -1,0 +1,5 @@
+name = Research Guide
+description = Based heavily on bluemarine.
+version = VERSION
+core = 6.x
+engine = phptemplate

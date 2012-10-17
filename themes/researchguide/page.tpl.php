@@ -7,13 +7,13 @@
   <?php print $head ?>
   <title><?php print $head_title ?></title>
   <?php print $styles ?>
-  <!--<link rel="stylesheet" type="text/css" href="../themes/bluemarine/dojo/dijit/themes/tundra/tundra.css" />-->
   <?php print $scripts ?>
-  <link type="text/css" href="../themes/bluemarine/css/redmond/jquery-ui-1.8.1.custom.css" rel="Stylesheet" />	
-  <script type="text/javascript" src="../themes/bluemarine/js/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="../themes/bluemarine/js/jquery-ui-1.8.1.custom.min.js"></script>
+  <?php 
+    drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-1.4.2.min.js');
+    php drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-ui-1.8.1.custom.min.js');
+    drupal_add_css(drupal_get_path('theme', 'researchguide') . 'css/redmond/jquery-ui-1.8.1.custom.css');
+  ?>
   <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyle Content in IE */ ?> </script>
-  <!--<script type="text/javascript" src="../themes/bluemarine/dojo/dojo/dojo.js" djConfig="parseOnLoad: true"></script>-->
 </head>
 
 <body>

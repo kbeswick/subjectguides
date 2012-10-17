@@ -25,6 +25,9 @@ h2 {
 h3, h4, h5, h6 {
   font-size: 1.1em;
 }
+ul {
+  padding: 10px;
+}
 p {
   margin-top: 0.5em;
   margin-bottom: 0.9em;
@@ -78,7 +81,8 @@ table {
   width: 100%;
 }
 #header {
-  background-color: #69c;
+  background-color: #0d3692;
+  height: 105px;
 }
 #logo {
   vertical-align: middle;
@@ -87,6 +91,7 @@ table {
 #logo img {
   float: left; /* LTR */
   padding: 0 1em;
+  margin-top: 1em;
   border: 0;
 }
 #menu {
@@ -138,9 +143,9 @@ ul.links li.first {
   font-weight: bold;
 }
 .site-name {
-  margin: 0.6em 0 0 ;
+  margin: 1.1em 0 0 ;
   padding: 0;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .site-name a:link, .site-name a:visited {
   color: #fff;
@@ -206,6 +211,9 @@ ul.links li.first {
   color: #777;
   margin: 0 auto;  /* decrease default margins for h<x>.title */
 }
+h1.title {
+  font-size: 1.25em;
+}
 .submitted {
   color: #999;
   font-size: 0.8em;
@@ -220,7 +228,7 @@ ul.links li.first {
   padding: 0 0 1.5em 0; /* LTR */
 }
 .block {
-  border-bottom: 1px solid #bbb;
+  /*border-bottom: 1px solid #bbb;*/
   padding-bottom: 0.75em;
   margin-bottom: 1.5em;
 }
@@ -247,8 +255,7 @@ ul.links li.first {
   padding-left: 1.5em; /* LTR */
 }
 .node .picture {
-  border: 1px solid #ddd;
-  float: right; /* LTR */
+  border: 0px solid #ddd;
   margin: 0.5em;
 }
 .comment {
@@ -324,7 +331,7 @@ ul.links li.first {
   font-size: 0.9em;
 }
 #profile .profile {
-  clear: both;
+  /*clear: both;*/
   border: 1px solid #abc;
   padding: .5em;
   margin: 1em 0em;
@@ -342,7 +349,7 @@ div.admin-panel .body {
   background: #f4f4f4;
 }
 div.admin-panel h3 {
-  background-color: #69c;
+  background-color: #0061AA;
   color: #fff;
   padding: 5px 8px 5px;
   margin: 0;

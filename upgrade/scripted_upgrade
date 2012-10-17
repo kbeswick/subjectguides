@@ -1,0 +1,91 @@
+#!/bin/bash
+echo Database load: XXX - TESTING ONLY!
+exit
+#sudo su -c 'dropdb subguides' postgres
+#sudo su -c 'psql < /var/backups/biblio/var/lib/postgresql/backup/biblio-pgsql-db.dump' postgres 
+
+echo 
+exit Check the results of your database load
+
+DRUPALTMP=/tmp/drupal_upgrade
+DRUPALOLD=/var/www/research
+DRUPALINST=/var/www/research-6.26
+DRUPALBAK=/var/www/research.bak
+
+mkdir -p $DRUPALTMP/libraries
+mkdir -p $DRUPALTMP/modules
+mkdir -p $DRUPALTMP/patches
+mkdir -p $DRUPALTMP/themes
+
+cp patches/breadcrumb.patch $DRUPALTMP/patches
+
+cd $DRUPALTMP
+wget http://ftp.drupal.org/files/projects/cck-6.x-2.9.tar.gz
+wget http://ftp.drupal.org/files/projects/ctools-6.x-1.9.tar.gz
+wget http://ftp.drupal.org/files/projects/date-6.x-2.9.tar.gz
+wget http://ftp.drupal.org/files/projects/devel-6.x-1.27.tar.gz
+wget http://ftp.drupal.org/files/projects/drupal-6.26.tar.gz
+wget http://ftp.drupal.org/files/projects/jquery_ui-6.x-1.5.tar.gz
+wget http://ftp.drupal.org/files/projects/panels-6.x-3.10.tar.gz
+wget http://ftp.drupal.org/files/projects/pathauto-6.x-1.6.tar.gz
+wget http://ftp.drupal.org/files/projects/token-6.x-1.19.tar.gz
+wget http://ftp.drupal.org/files/projects/views-6.x-2.16.tar.gz
+wget http://ftp.drupal.org/files/projects/wysiwyg-6.x-2.4.tar.gz
+
+tar xzf drupal-6.26.tar.gz
+
+cd $DRUPALTMP/modules
+tar xzf ../cck-6.x-2.9.tar.gz
+tar xzf ../ctools-6.x-1.9.tar.gz
+tar xzf ../date-6.x-2.9.tar.gz
+tar xzf ../devel-6.x-1.27.tar.gz
+tar xzf ../jquery_ui-6.x-1.5.tar.gz
+tar xzf ../panels-6.x-3.10.tar.gz
+tar xzf ../pathauto-6.x-1.6.tar.gz
+tar xzf ../token-6.x-1.19.tar.gz
+tar xzf ../views-6.x-2.16.tar.gz
+tar xzf ../wysiwyg-6.x-2.4.tar.gz
+
+cd $DRUPALTMP/themes
+wget https://raw.github.com/kbeswick/subjectguides/master/themes/bluemarine/node.tpl.php
+wget https://raw.github.com/kbeswick/subjectguides/master/themes/bluemarine/page.tpl.php
+
+cd $DRUPALTMP/libraries
+wget http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip
+
+# copy stuff 
+sudo mv $DRUPALOLD $DRUPALBAK
+sudo mkdir $DRUPALINST
+# XXX - TEST
+sudo cp -r /var/backups/biblio/var/www/research/* $DRUPALINST/.
+# XXX - PRODUCTION
+sudo cp -r $DRUPALBAK/* $DRUPALINST/.
+sudo cp -r $DRUPALTMP/drupal-6.26/* $DRUPALINST/.
+sudo rm -fr $DRUPALINST/modules/date
+sudo cp -r $DRUPALTMP/modules/date $DRUPALINST/modules/.
+sudo cp -b $DRUPALTMP/themes/* $DRUPALINST/themes/bluemarine/.
+sudo chown -R www-data:www-data $DRUPALINST
+
+echo Now run Drupal upgrade
+exit
+
+sudo cp -r $DRUPALTMP/modules/cck $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/ctools $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/date $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/devel $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/jquery_ui $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/panels $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/pathauto $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/token $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/views $DRUPALINST/sites/all/modules/.
+sudo cp -r $DRUPALTMP/modules/wysiwyg $DRUPALINST/sites/all/modules/.
+sudo cp $DRUPALTMP/libraries $DRUPALINST/sites/all/libraries/.
+
+sudo patch $DRUPALINST/modules/custom_breadcrumbs/custom_breadcrumbs.module < $DRUPALTMP/patches/breadcrumbs.patch
+
+cd $DRUPALINST/sites/all/libraries/
+sudo unzip jquery.ui-1.6.zip
+sudo ln -sf jquery.ui-1.6 jquery.ui
+
+sudo chown -R www-data:www-data $DRUPALINST
+echo Now run Drupal upgrade again
