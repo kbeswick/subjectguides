@@ -355,3 +355,11 @@ div.admin-panel h3 {
   margin: 0;
 }
 
+.nice-menu-hide-title {
+    display: none;
+}
+div.block-nice_menus h2 div {
+  float: right;
+  position: relative;
+  right: 5%;
+}

@@ -68,6 +68,11 @@ sudo chown -R www-data:www-data $DRUPALINST
 echo Now run Drupal upgrade
 exit
 
+for i in cck ctools date devel panels pathauto token views wysiwyg
+do
+    mv $DRUPALINST/modules/$i $DRUPALINST/sites/all/modules/.
+done
+
 sudo cp -r $DRUPALTMP/modules/cck $DRUPALINST/sites/all/modules/.
 sudo cp -r $DRUPALTMP/modules/ctools $DRUPALINST/sites/all/modules/.
 sudo cp -r $DRUPALTMP/modules/date $DRUPALINST/sites/all/modules/.
