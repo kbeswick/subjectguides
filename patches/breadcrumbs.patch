@@ -1,0 +1,12 @@
+--- /var/backups/biblio/var/www/research/modules/custom_breadcrumbs/custom_breadcrumbs.module   2009-09-30 08:12:11.000000000 -0400
++++ /var/www/research-6.26/modules/custom_breadcrumbs/custom_breadcrumbs.module 2012-10-17 11:59:56.000000000 -0400
+@@ -156,7 +156,8 @@
+     switch ($identifier) {
+       case '<pathauto>':
+         if (module_exists('pathauto'))
+-          $crumb = l($title, pathauto_cleanstring($path, FALSE));
++          //$crumb = l($title, pathauto_cleanstring($path, FALSE));
++          $crumb = l($title, $original_path);
+         break;
+       default:
+         $crumb = l($title, $original_path);
