@@ -14,12 +14,12 @@
 
         if ($desc) {
             $desc = <<<HERE
-                <tr id="dbdesc_$nid" style="display:none;">
+                <tr name="dbdesc_$nid" style="display:none;">
                     <td width="25%"><b>Description:</b></td>
                     <td>$desc</td>
                 </tr>
 HERE;
-            $db_display = "<sup onclick='$(\"#dbdesc_$nid\").toggle();' style='text-decoration:underline;'>(?)</sup>";
+            $db_display = "<sup onclick='$(\"[name=\\\"dbdesc_$nid\\\"]\").toggle();' style='text-decoration:underline;'>(?)</sup>";
         }
         // START Output for database
 ?>
