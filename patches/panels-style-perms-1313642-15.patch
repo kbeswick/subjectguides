@@ -1,0 +1,12 @@
+diff --git a/panels.module b/panels.module
+index eebcb99..f3d1a08 100644
+--- a/panels.module
++++ b/panels.module
+@@ -263,6 +263,7 @@
+     'administer pane access',
+     'administer advanced pane settings',
+     'administer panels layouts',
++    'administer panels styles',
+     'use panels caching features',
+     'use panels dashboard',
+     'use panels in place editing',
