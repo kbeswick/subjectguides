@@ -21,7 +21,17 @@
 <table border="0" cellpadding="0" cellspacing="0" id="header">
   <tr>
     <td id="logo">
-      <?php if ($logo) { ?><a href="<?php print $front_page ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
+      <?php
+        global $base_url;
+        $logo = '/LU.png';
+        if ($language == 'fr') {
+            $logo = '/UL.png';
+        }
+        if ($logo) {
+            $logo = "$base_url/" . drupal_get_path('theme', 'researchguide') . $logo;
+        ?><a href="<?php print $front_page ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a>
+        <?php }
+      ?>
       <?php if ($site_name) { ?><h1 class='site-name'><a href="<?php print $front_page ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
       <?php if ($site_slogan) { ?><div class='site-slogan'><?php print $site_slogan ?></div><?php } ?>
     </td>
