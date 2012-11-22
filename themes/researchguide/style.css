@@ -365,3 +365,13 @@ div.block-nice_menus h2 div {
   float: right;
   position: inherit;
 }
+.lib-nav-wrapper {
+  background-color: #1D2A54;
+  line-height: 2em;
+}
+.lib-nav-wrapper a {
+  margin-left: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: white;
+}
