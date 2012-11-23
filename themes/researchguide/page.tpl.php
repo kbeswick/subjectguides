@@ -68,7 +68,6 @@
       </div>
       <div id="main">
         <?php print $breadcrumb ?>
-        <h1 class="title"><?php print $title ?></h1>
         <div class="tabs"><?php print $tabs ?></div>
         <?php if ($show_messages) { print $messages; } ?>
         <?php print $help ?>
