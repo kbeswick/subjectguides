@@ -24,7 +24,7 @@
       <?php
         global $base_url;
         $logo = '/LU.png';
-        if ($language == 'fr') {
+        if ($language->language == 'fr') {
             $logo = '/UL.png';
         }
         if ($logo) {
@@ -52,7 +52,7 @@
     <td valign="top">
       <?php if ($mission) { ?><div id="mission"><?php print $mission ?></div><?php } ?>
       <div class="lib-nav-wrapper">
-      <?php if ($language == 'fr') { ?>
+      <?php if ($language->language == 'fr') { ?>
         <a href="https://laurentienne.concat.ca">Catalogue</a>
         <a href="http://sfx.scholarsportal.info/laurentian/az?lang=fre">Périodiques électroniques (A-Z)</a>
         <a href="http://laurentian.ca/content/archives">Archives</a>
