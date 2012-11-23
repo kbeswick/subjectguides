@@ -375,3 +375,20 @@ div.block-nice_menus h2 div {
   padding-bottom: 0.5em;
   color: white;
 }
+div.block-locale, div.block-locale * {
+  display: inline;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+div.content ul {
+  list-style: none;
+  display: inline;
+  margin-right: 3em;
+}
+div.content ul li.active {
+  display: none;
+}
+.block-nice_menus { display: inline; float: left; margin: 0; padding: 0; }
+.block-nice_menus div { float: left; position: relative; left: 95%; display: inline; }
+.block-nice_menus ul { position: relative; left: -95%; }
