@@ -78,17 +78,6 @@
     <?php if ($right) { ?><td id="sidebar-right">
       <?php print $right ?>
     </td><?php } ?>
-    <?php if (!$right) { ?><td id="sidebar-right" style="display:none;">
-<a class="twitter-timeline" data-dnt=true href="https://twitter.com/LaurentianLib" data-widget-id="273886972181889025">Tweets by @LaurentianLib</a>
-<script>
-var showTwit = 0;
-if (window.matchMedia) {
-  var mq = window.matchMedia( "(min-width: 800px)" );
-  if (mq.matches) { showTwit = 1; }
-} else if (document.documentElement.clientWidth > 800) { /* I hate you IE */
-  showTwit = 1;
-} if (showTwit) {!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");$('#sidebar-right').show();}</script>
-    </td><?php } ?>
   </tr>
 </table>
 
