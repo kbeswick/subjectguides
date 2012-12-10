@@ -55,13 +55,13 @@
       <?php if ($language->language == 'fr') { ?>
         <a href="https://laurentienne.concat.ca">Catalogue</a>
         <a href="http://sfx.scholarsportal.info/laurentian/az?lang=fre">Périodiques électroniques (A-Z)</a>
-        <a href="http://laurentian.ca/content/archives">Archives</a>
+        <a href="http://laurentian.ca/fr/content/archives">Archives</a>
         <a href="http://biblio.laurentian.ca/reserves/">Liste de Réserves</a>
         <a href="mailto:reference@laurentian.ca">Vos réactions</a>
       <?php } else { ?>
         <a href="https://laurentian.concat.ca">Catalogue</a>
         <a href="http://sfx.scholarsportal.info/laurentian/az?lang=eng">Electronic Journals (A-Z)</a>
-        <a href="http://laurentian.ca/content/archives">Archives</a>
+        <a href="http://laurentian.ca/node/2110">Archives</a>
         <a href="http://biblio.laurentian.ca/reserves/">Course Reserves</a>
         <a href="mailto:reference@laurentian.ca">Feedback</a>
       <?php } ?>
