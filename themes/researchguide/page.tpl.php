@@ -13,6 +13,10 @@
     drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-ui-1.8.1.custom.min.js');
     drupal_add_css(drupal_get_path('theme', 'researchguide') . 'css/redmond/jquery-ui-1.8.1.custom.css');
   ?>
+  <script type="text/javascript"> 
+    var jq = jQuery;
+    jQuery.noConflict(true);
+  </script>
   <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyle Content in IE */ ?> </script>
 </head>
 

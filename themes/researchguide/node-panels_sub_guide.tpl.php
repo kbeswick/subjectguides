@@ -26,8 +26,8 @@
 	.db_title_link A:visited { color: white; }
 </style>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#tabs").tabs();
+	jq(document).ready(function() {
+		jq("#tabs").tabs();
 	});
 </script>
 <?php
