@@ -28,12 +28,14 @@
       <?php
         global $base_url;
         $logo = '/LU.png';
+        $lu_home = 'http://laurentian.ca';
         if ($language->language == 'fr') {
             $logo = '/UL.png';
+            $lu_home = 'http://laurentian.ca/fr';
         }
         if ($logo) {
             $logo = "$base_url/" . drupal_get_path('theme', 'researchguide') . $logo;
-        ?><a href="<?php print $front_page ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a>
+        ?><a href="<?php print $lu_home ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a>
         <?php }
       ?>
       <?php if ($site_name) { ?><h1 class='site-name'><a href="<?php print $front_page ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
