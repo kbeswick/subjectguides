@@ -37,13 +37,13 @@ a {
   font-weight: bold;
 }
 a:link {
-  color: #39c;
+  color: #3D5B80;
 }
 a:visited {
-  color: #369;
+  color: #3D5B80;
 }
 a:hover {
-  color: #39c;
+  color: #3D5B80;
   text-decoration: underline;
 }
 fieldset {
@@ -124,7 +124,7 @@ ul.links li.first {
   border: none;
 }
 #search .form-text, #search .form-submit {
-  border: 1px solid #369;
+  border: 1px solid #3D5B80;
   font-size: 1.1em;
   height: 1.5em;
   vertical-align: middle;
@@ -134,7 +134,7 @@ ul.links li.first {
   padding: 0 0.5em;
 }
 #mission {
-  background-color: #369;
+  background-color: #3D5B80;
   padding: 1.5em 2em;
   color: #fff;
 }
@@ -145,16 +145,16 @@ ul.links li.first {
 .site-name {
   margin: 1em 0 0 0;
   padding: 0;
-  font-size: 2em;
+  font-size: 1.85em;
   display: inline;
   position: relative;
-  top: 0.5em;
+  top: 1.35em;
 }
 .site-name a:link, .site-name a:visited {
-  color: #369;
+  color: #1D2A54;
 }
 .site-name a:hover {
-  color: #369;
+  color: #1D2A54;
   text-decoration: none;
 }
 .site-slogan {
@@ -168,6 +168,7 @@ ul.links li.first {
 #main {
   /* padding in px not ex because IE messes up 100% width tables otherwise */
   padding: 10px;
+  background: #EEE;
 }
 #mission, .node .content, .comment .content {
   line-height: 1.4em;
@@ -392,3 +393,7 @@ div.content ul li.active {
 .block-nice_menus { display: inline; float: left; margin: 0; padding: 0; }
 .block-nice_menus div { float: left; position: relative; left: 95%; display: inline; }
 .block-nice_menus ul { position: relative; left: -95%; }
+
+li a.active {
+  color: #1d2a54;
+}
