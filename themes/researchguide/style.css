@@ -169,6 +169,7 @@ ul.links li.first {
   /* padding in px not ex because IE messes up 100% width tables otherwise */
   padding: 10px;
   background: #EEE;
+  background: #EEE;
 }
 #mission, .node .content, .comment .content {
   line-height: 1.4em;
@@ -190,7 +191,7 @@ ul.links li.first {
   border-color: red;
 }
 #sidebar-left, #sidebar-right {
-  background-color: #ddd;
+  background-color: #FFF;
   /*width: 16em;*/
   width: 10em;
   /* padding in px not ex because IE messes up 100% width tables otherwise */
