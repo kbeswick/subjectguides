@@ -168,8 +168,6 @@ ul.links li.first {
 #main {
   /* padding in px not ex because IE messes up 100% width tables otherwise */
   padding: 10px;
-  background: #EEE;
-  background: #EEE;
 }
 #mission, .node .content, .comment .content {
   line-height: 1.4em;
