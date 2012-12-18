@@ -37,13 +37,13 @@ a {
   font-weight: bold;
 }
 a:link {
-  color: #3D5B80;
+  color: #39C;
 }
 a:visited {
-  color: #3D5B80;
+  color: #39C;
 }
 a:hover {
-  color: #3D5B80;
+  color: #39C;
   text-decoration: underline;
 }
 fieldset {
