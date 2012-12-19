@@ -382,9 +382,8 @@ div.block-locale, div.block-locale * {
   padding: 0;
 }
 div.content ul {
-  list-style: none;
-  display: inline;
   margin-right: 3em;
+  margin-left: 1em;
 }
 div.content ul li.active {
   display: none;
