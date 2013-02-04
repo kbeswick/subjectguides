@@ -196,6 +196,9 @@ ul.links li.first {
   padding: 10px;
   vertical-align: top;
 }
+#sidebar-right {
+  width: 17.5em;
+}
 #footer {
   background-color: #eee;
   padding: 1em;
