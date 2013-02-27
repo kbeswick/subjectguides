@@ -1,0 +1,27 @@
+67,70c67
+<         '#autocomplete_path' => $instance['widget']['settings']['autocomplete_path'] .
+<           '/' . $instance['entity_type'] .
+<           '/' . $instance['bundle'] .
+<           '/' . $field['field_name'],
+---
+>         '#autocomplete_path' => NULL,
+113,129d109
+<       // No explicit nid (the submitted value was not populated by autocomplete
+<       // selection). Get the nid of a referencable node from the entered title.
+<       $options = array(
+<         'string' => $value,
+<         'match' => 'equals',
+<         'ids' => NULL,
+<         'limit' => 1,
+<       );
+<       $reference = node_reference_potential_references($field, $options);
+<       if ($reference) {
+<         // @todo The best thing would be to present the user with an
+<         // additional form, allowing the user to choose between valid
+<         // candidates with the same title. ATM, we pick the first
+<         // matching candidate...
+<         $nid = key($reference);
+<       }
+<       else {
+145d124
+<       }
