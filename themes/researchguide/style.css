@@ -188,7 +188,7 @@ ul.links li.first {
 .error {
   border-color: red;
 }
-#sidebar-left, #sidebar-right {
+#sidebar-first, #sidebar-second {
   background-color: #FFF;
   /*width: 16em;*/
   width: 10em;
@@ -196,8 +196,8 @@ ul.links li.first {
   padding: 10px;
   vertical-align: top;
 }
-#sidebar-right {
-  width: 17.5em;
+#sidebar-second {
+	width: 17.5em;
 }
 #footer {
   background-color: #eee;
@@ -260,7 +260,7 @@ h1.title {
   font-size: 0.8em;
   padding-left: 1.5em; /* LTR */
 }
-.node .picture {
+.node .user-picture {
   border: 0px solid #ddd;
   margin: 0.5em;
 }
@@ -280,7 +280,7 @@ h1.title {
   float: right; /* LTR */
   color: red;
 }
-.comment .picture {
+.comment .user-picture {
   border: 1px solid #abc;
   float: right; /* LTR */
   margin: 0.5em;

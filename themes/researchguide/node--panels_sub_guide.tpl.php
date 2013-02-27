@@ -25,43 +25,16 @@
 	.db_title_link A:hover { color: gray; text-decoration: underline; }
 	.db_title_link A:visited { color: white; }
 </style>
-<script type="text/javascript">
-	jq(document).ready(function() {
-		jq("#tabs").tabs();
-	});
-</script>
-<?php
-	$subject_librarian = user_load($uid);
+<?php drupal_add_library('system', 'ui.tabs'); ?>
+<?php drupal_add_js('jQuery(document).ready(function(){
+jQuery("#tabs").tabs();
+});
+', 'inline');
 ?>
 
-<div id="subject_librarian">
-	<img src="http://biblio-dev.laurentian.ca/subjectguides/<?php print $subject_librarian->picture; ?>" class="float_right" width="140px" height="130px">
-	<h2>Subject Librarian</h2>
-	<br />
-	<table>
-		<tr>
-			<td><b>Name:</b></td>
-			<td><?php print $subject_librarian->profile_name; ?></td>
-		</tr>
-		<tr>
-			<td><b>Position Title:</b></td>
-			<td><?php print $subject_librarian->profile_position_title; ?></td>
-		</tr>
-		<tr>
-			<td><b>Email (at laurentian.ca):</b></td>
-			<td><?php print $subject_librarian->profile_email; ?></td>
-		</tr>
-		<tr>
-			<td><b>Office Location:</b></td>
-			<td><?php print $subject_librarian->profile_office_location; ?></td>
-		</tr>
-		<tr>
-			<td><b>Extension:</b></td>
-			<td><?php print $subject_librarian->profile_extension; ?></td>
-		</tr>
-	</table>
-</div>
 <br />
+
+<div class="node">
 <div id="tabs">
 	<ul>
 		<?php
@@ -84,10 +57,11 @@
 			$page = node_load($page_ref['nid']);
 	?>
 			<div id="tab<?php print $count; ?>">
-				<?php print node_view($page); ?>
+				<?php print render(node_view($page)); ?>
 			</div>
 	<?php
 			$count++;
 		}
 	?>
+</div>
 </div>

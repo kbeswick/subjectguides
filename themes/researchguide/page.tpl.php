@@ -1,27 +1,4 @@
-<?php
-// $Id: page.tpl.php,v 1.28.2.1 2009/04/30 00:13:31 goba Exp $
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="<?php print $language->language ?>" xml:lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
-
-<head>
-  <?php print $head ?>
-  <title><?php print $head_title ?></title>
-  <?php print $styles ?>
-  <?php print $scripts ?>
-  <?php 
-    drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-1.4.2.min.js');
-    drupal_add_js(drupal_get_path('theme', 'researchguide') . 'js/jquery-ui-1.8.1.custom.min.js');
-    drupal_add_css(drupal_get_path('theme', 'researchguide') . 'css/redmond/jquery-ui-1.8.1.custom.css');
-  ?>
-  <script type="text/javascript"> 
-    var jq = jQuery;
-    jQuery.noConflict(true);
-  </script>
-  <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyle Content in IE */ ?> </script>
-</head>
-
-<body>
-
+<?php print render($page['page_top']); ?>
 <table border="0" cellpadding="0" cellspacing="0" id="header">
   <tr>
     <td id="logo">
@@ -38,25 +15,24 @@
         ?><a href="<?php print $lu_home ?>" title="<?php print t('Home') ?>"><img src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a>
         <?php }
       ?>
-      <?php if ($site_name) { ?><h1 class='site-name'><a href="<?php print $front_page ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
-      <?php if ($site_slogan) { ?><div class='site-slogan'><?php print $site_slogan ?></div><?php } ?>
+      <?php if ($site_name) { ?><h1 class='site-name'><a href="<?php print render($front_page) ?>" title="<?php print t('Home') ?>"><?php print render($site_name) ?></a></h1><?php } ?>
+      <?php if ($site_slogan) { ?><div class='site-slogan'><?php print render($site_slogan); ?></div><?php } ?>
     </td>
     <td id="menu">
-      <?php print $search_box ?>
     </td>
   </tr>
   <tr>
-    <td colspan="2"><div><?php print $header ?></div></td>
+    <td colspan="2"><div><?php print render($page['header']); ?></div></td>
   </tr>
 </table>
 
 <table border="0" cellpadding="0" cellspacing="0" id="content">
   <tr>
-    <?php if ($left) { ?><td id="sidebar-left">
-      <?php print $left ?>
+    <?php if ($page['sidebar_first']) { ?><td id="sidebar-first">
+      <?php print render($page[sidebar_first]); ?>
     </td><?php } ?>
     <td valign="top">
-      <?php if ($mission) { ?><div id="mission"><?php print $mission ?></div><?php } ?>
+      <?php if ($page['highlighted']) { ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php } ?>
       <div class="lib-nav-wrapper">
       <?php if ($language->language == 'fr') { ?>
         <a href="https://laurentienne.concat.ca">Catalogue</a>
@@ -73,24 +49,23 @@
       <?php } ?>
       </div>
       <div id="main">
-        <?php print $breadcrumb ?>
-        <div class="tabs"><?php print $tabs ?></div>
+        <?php print render($breadcrumb) ?>
+        <div class="tabs"><?php print render($tabs) ?></div>
         <?php if ($show_messages) { print $messages; } ?>
-        <?php print $help ?>
-        <?php print $content; ?>
+        <?php print render($page['help']); ?>
+        <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div>
     </td>
-    <?php if ($right) { ?><td id="sidebar-right">
-      <?php print $right ?>
+    <?php if ($page['sidebar_second']) { ?><td id="sidebar-second">
+      <?php print render($page['sidebar_second']); ?>
     </td><?php } ?>
   </tr>
 </table>
 
 <div id="footer">
-  <?php print $footer_message ?>
-  <?php print $footer ?>
+  <?php print render($page['footer']); ?>
 </div>
-<?php print $closure ?>
+<?php print render($page['page_bottom']); ?>
 </body>
 </html>

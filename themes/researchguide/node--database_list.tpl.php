@@ -8,8 +8,8 @@
         if (isset($dbase->field_database_expiration_date[0]['value2']) && strtotime($dbase->field_database_expiration_date[0]['value2']) < strtotime(date('Y-m-d')))
             continue;
 
-        $dburl = $dbase->field_database_url[0]['url'];
-        $desc = $dbase->field_database_description[0]["value"];
+        $dburl = $dbase->field_database_url['und'][0]['url'];
+        $desc = $dbase->field_database_description['und'][0]["value"];
         $db_display = '';
 
         if ($desc) {
@@ -19,14 +19,14 @@
                     <td>$desc</td>
                 </tr>
 HERE;
-            $db_display = "<sup onclick='$(\"[name=\\\"dbdesc_$nid\\\"]\").toggle();' style='text-decoration:underline;'>(?)</sup>";
+            $db_display = "<sup onclick='jQuery(\"[name=\\\"dbdesc_$nid\\\"]\").toggle();' style='text-decoration:underline;'>(?)</sup>";
         }
         // START Output for database
 ?>
 
         <table border="0" class="db_listing">
-            <tr><td colspan="2"><h3><a href="<?php print $dburl; ?>"><?php print $dbase->title; ?></a> <?php print $db_display; ?></h3></td></tr>
-            <?php print $desc; ?>
+            <tr><td colspan="2"><h3><a href="<?php print $dburl; ?>"><?php print render($dbase->title); ?></a> <?php print render($db_display); ?></h3></td></tr>
+            <?php print render($desc); ?>
         </table>
 
 <?php

@@ -2,8 +2,8 @@
 // $Id: comment.tpl.php,v 1.7 2008/01/04 19:24:23 goba Exp $
 ?>
   <div class="comment<?php print ' '. $status; ?>">
-    <?php if ($picture) {
-    print $picture;
+    <?php if ($user-picture) {
+    print $user-picture;
   } ?>
 <h3 class="title"><?php print $title; ?></h3><?php if ($new != '') { ?><span class="new"><?php print $new; ?></span><?php } ?>
     <div class="submitted"><?php print $submitted; ?></div>
