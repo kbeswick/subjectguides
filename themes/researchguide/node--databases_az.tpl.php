@@ -55,10 +55,12 @@
     ", array(':language' => $language->language)
   );
 
+  $desc_header = 'Description: ';
   // Inline navigation via the wonder of anchors
   $jump_text = 'Jump to:';
   if ($language->language == 'fr') {
     $jump_text = 'Aller à :';
+    $desc_header = 'Description : ';
   }
   $jump_list = <<<"HERE"
     <p class='dblist_nav'>$jump_text
@@ -116,7 +118,7 @@ HERE;
 
     if ($cur_db_desc) {
       $desc = '<p name="dbdesc_' . $nid . '" style="display:none;">';
-      $desc .= '<span width="25%"><b>Description:</b></span>';
+      $desc .= '<span width="25%"><b>' . $desc_header . '</b></span>';
       $desc .= '<span>' . $cur_db_desc . '</span>';
       $desc .= '</p>';
 
