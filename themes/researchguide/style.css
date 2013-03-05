@@ -398,3 +398,9 @@ div.content ul li.active {
 li a.active {
   color: #1d2a54;
 }
+a.db_edit_link {
+  color: #aaa;
+}
+a.db_edit_link:hover {
+  color: #39C;
+}
