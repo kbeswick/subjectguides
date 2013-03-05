@@ -10,6 +10,13 @@
 
         $dburl = $dbase->field_database_url['und'][0]['url'];
         $desc = $dbase->field_database_description['und'][0]["value"];
+
+        // Proxy 'em if you got 'em
+        $cur_db_proxy = $dbase->field_proxied['und'][0]['value'];
+        if ($cur_db_proxy) {
+            $dburl = "http://librweb.laurentian.ca/login?url=$dburl";
+        }
+
         $db_display = '';
 
         if ($desc) {
