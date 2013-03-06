@@ -391,9 +391,9 @@ div.content ul {
 div.content ul li.active {
   display: none;
 }
-.block-nice_menus { display: inline; float: left; margin: 0; padding: 0; }
-.block-nice_menus div { float: left; position: relative; left: 95%; display: inline; }
-.block-nice_menus ul { position: relative; left: -95%; }
+.block-nice_menus { display: inline; float: left; margin: 1.3em 0; padding: 0; width: 100%; background-color: #1D2A54; }
+.block-nice_menus div { float: left; position: relative; display: inline; }
+.block-nice_menus ul { position: relative; }
 
 li a.active {
   color: #1d2a54;
