@@ -39,4 +39,11 @@ HERE;
 <?php
         // END Output for database
     }
+  
+    // Check current user's roles and show an edit button if admin or librarian
+    if (in_array(librarian, $GLOBALS['user']->roles) || in_array(administrator, $GLOBALS['user']->roles)) {
+       global $base_url;
+       print('<p><a class="db_edit_link" href="' . $base_url . '/node/' . $node->nid . '/edit">Edit database list</a></p>');
+    }
+
 ?>
